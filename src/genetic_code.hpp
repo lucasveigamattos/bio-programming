@@ -1,8 +1,7 @@
-#include <iostream>
+#include <string>
 #include <map>
 
-using std::map;
-using std::string;
+using namespace std;
 
 class GeneticCode {
     private:
