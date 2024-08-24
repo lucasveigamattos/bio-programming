@@ -36,7 +36,7 @@ class FileHandler {
         }
 
         void WriteFile(string line) {
-            (*fileStream) << line;
+            (*fileStream) << line << endl;
         }
 
         void ReadFile(void(*action)(string line)) {
