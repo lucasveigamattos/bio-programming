@@ -1,6 +1,8 @@
 #include <iostream>
 #include "src/genetic_code.hpp"
 #include "src/file_handler.hpp"
+#include "src/instruction_to_rna_strategy.hpp"
+#include "src/instruction_to_dna_strategy.hpp"
 
 using namespace std;
 
@@ -18,8 +20,16 @@ bool HandleArguments(int argc, char* argv[]) {
     return true;
 }
 
+void setStrategy(string code) {
+    if (code == "ConvertToDNA") {
+        geneticCode->set_strategy(make_unique<InstructionToDnaStrategy>());
+    } else {
+        geneticCode->set_strategy(make_unique<InstructionToRnaStrategy>());
+    }
+}
+
 void translateGeneticCode(string code) {
-    outputFileHandler->WriteFile(geneticCode->translateCodeToNitrogenousBase(code));
+    outputFileHandler->WriteFile(geneticCode->convert(code));
 }
 
 int main(int argc, char* argv[]) {
@@ -30,6 +40,7 @@ int main(int argc, char* argv[]) {
     inputFileHandler = new FileHandler(argv[1]);
     outputFileHandler = new FileHandler(argv[2], true);
 
+    inputFileHandler->ReadFile(&setStrategy, 1);
     inputFileHandler->ReadFile(&translateGeneticCode);
 
     inputFileHandler->Dispose();
