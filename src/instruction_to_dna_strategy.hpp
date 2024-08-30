@@ -96,7 +96,7 @@ class InstructionToDnaStrategy : public Strategy {
                 {"Gly0", "GGU"},
                 {"Gly1", "GGC"},
                 {"Gly2", "GGA"},
-                {"Gly3", "GGG"},
+                {"Gly3", "GGG"}
             };
 
             rnaToDnaTable = {
