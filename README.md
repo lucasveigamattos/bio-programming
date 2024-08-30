@@ -11,11 +11,11 @@ Stop
 
 ###### Choose one of the followind modes:
 
-ConvertToDNA        (amino acid to DNA)<br>
-FromDNAToCodons     (from DNA to amino acid)<br>
-FromRNAToCodons     (from RNA to amino acid)<br>
-FromDNAToRNA        (from DNA to RNA)<br>
-FromRNAToDNA        (from RNA to DNA)<br>
+ConvertToDNA           (amino acid to DNA)<br>
+FromDNAToAminoAcid     (from DNA to amino acid)<br>
+FromRNAToAminoAcid     (from RNA to amino acid)<br>
+FromDNAToRNA           (from DNA to RNA)<br>
+FromRNAToDNA           (from RNA to DNA)<br>
 Or leave the first line with a amino acid, to convert amino acids to RNA sequence (default mode) (amino acid to RNA).<br>
 
 example (ConvertToDNA)

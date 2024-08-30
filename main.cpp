@@ -30,12 +30,12 @@ void setStrategy(string code) {
         return;
     }
 
-    if (code == "FromDNAToCodons") {
+    if (code == "FromDNAToAminoAcid") {
         geneticCode->set_strategy(make_unique<DnaToInstructionStrategy>());
         return;
     }
 
-    if (code == "FromRNAToCodons") {
+    if (code == "FromRNAToAminoAcid") {
         geneticCode->set_strategy(make_unique<RnaToInstructionStrategy>());
         return;
     }
