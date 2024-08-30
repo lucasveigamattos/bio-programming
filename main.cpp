@@ -5,6 +5,8 @@
 #include "src/instruction_to_dna_strategy.hpp"
 #include "src/dna_to_instruction_strategy.hpp"
 #include "src/rna_to_instruction_strategy.hpp"
+#include "src/dna_to_rna_strategy.hpp"
+#include "src/rna_to_dna_strategy.hpp"
 
 using namespace std;
 
@@ -35,6 +37,16 @@ void setStrategy(string code) {
 
     if (code == "FromRNAToCodons") {
         geneticCode->set_strategy(make_unique<RnaToInstructionStrategy>());
+        return;
+    }
+
+    if (code == "FromDNAToRNA") {
+        geneticCode->set_strategy(make_unique<DnaToRnaStrategy>());
+        return;
+    }
+
+    if (code == "FromRNAToDNA") {
+        geneticCode->set_strategy(make_unique<RnaToDnaStrategy>());
         return;
     }
 

@@ -6,5 +6,5 @@ using namespace std;
 class Strategy {
     public:
         virtual ~Strategy() = default;
-        virtual std::string execute(std::string code) const = 0;
+        virtual string execute(string code) const = 0;
 };
